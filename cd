@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int decimal;
+    
+    cout << "請輸入一個10進位數字 (0～255): ";
+    cin >> decimal;
+    
+    if (decimal < 0 || decimal > 255) {
+        cout << "輸入數字超出範圍。" << endl;
+        return 1;
+    }
+     
+    // 轉換為二進位
+    bitset<8> binary(decimal);
+    
+    // 轉換為16進位
+    cout << "二進位表示: " << binary << endl;
+    cout << "十六進位表示: 0x" << hex << uppercase << setw(2) << setfill('0') << decimal << endl;
+    
+	system("pause")
+    return 0;
+}
